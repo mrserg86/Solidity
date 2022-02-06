@@ -31,7 +31,7 @@ contract Mrserg86TokenCoin is Ownable {
     
     mapping (address => uint) balances;
     
-    mapping (address => mapping(address => uint)) allowed;
+    // mapping (address => mapping(address => uint)) allowed;
     
     function mint(address _to, uint _value) public onlyOwner {
         assert(totalSupply + _value >= totalSupply && balances[_to] + _value >= balances[_to]);
