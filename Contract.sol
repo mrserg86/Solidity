@@ -21,9 +21,9 @@ contract Ownable {
  
 contract Mrserg86TokenCoin is Ownable {
     
-    string public constant name = "Simple Coin Token";
+    string public constant name = "Mrserg86 Token";
     
-    string public constant symbol = "SCT";
+    string public constant symbol = "SERG1";
     
     uint32 public constant decimals = 18;
     
