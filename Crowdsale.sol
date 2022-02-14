@@ -22,11 +22,11 @@ contract Crowdsale {
         contractAddress = address(this);
     }
     
-    function payForItem() public {
+    function payForItem() public payable {
         require(block.timestamp > start && block.timestamp < start + period*24*60*60);
         address payable _owner = payable(owner);
         _owner.transfer(msg.value);
-        token.mint(0x0,msg.sender, msg.value*1000);
+        token.mint(address(0x0),msg.sender, msg.value*1000);
     }
 
     receive() external payable {
@@ -68,7 +68,7 @@ contract Mrserg86TokenCoin {
         emit Transfer(_from, _to, _value);
     }
     
-    function balanceOf(address _owner) public returns (uint balance) {
+    function balanceOf(address _owner) public view returns (uint balance) {
         return balances[_owner];
     }
  
@@ -82,15 +82,15 @@ contract Mrserg86TokenCoin {
         return false;
     }
     
-    function transferFrom() public returns (uint nol) {
+    function transferFrom() public pure returns (uint nol) {
         return 0;
     }
     
-    function approve() public returns (bool success) {
+    function approve() public pure returns (bool success) {
         return false;
     }
     
-    function allowance() public returns (bool success) {
+    function allowance() public pure returns (bool success) {
         return false;
     }
     
